@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.exam.durid.dao.cluster.DictMapper" >
+    <resultMap id="BaseResultMap" type="com.exam.durid.model.Dict" >
+        <id column="id" property="id" jdbcType="BIGINT" />
+        <result column="value" property="value" jdbcType="VARCHAR" />
+        <result column="label" property="label" jdbcType="VARCHAR" />
+        <result column="type" property="type" jdbcType="VARCHAR" />
+        <result column="description" property="description" jdbcType="VARCHAR" />
+        <result column="parentId" property="parentId" jdbcType="VARCHAR" />
+    </resultMap>
+
+    <sql id="Base_Column_List" >
+        id, value, label, type ,description ,parentId
+    </sql>
+
+    <select id="getAll" resultMap="BaseResultMap"  >
+        SELECT *  FROM sys_dict limit 10
+    </select>
+
+</mapper>
